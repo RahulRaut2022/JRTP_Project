@@ -1,0 +1,39 @@
+package com.project1.phonebook.service;
+
+import java.util.List;
+
+import com.project1.phonebook.entity.Contact;
+
+public class ContactServiceImpl implements ContactService {
+
+	@Override
+	public String saveContact(Contact contact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Contact> getAllContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contact getContactById(Integer contactId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateContact(Contact contact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteContactById(Integer contactId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
