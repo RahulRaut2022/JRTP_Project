@@ -31,4 +31,6 @@ public class Contact {
 	private String contactEmail;
 	@Column(name = "CONTACT_NUMBER",length = 10)
 	private Long phoneNumber;
+	@Column(name = "ACTIVE_SW")
+	private String activeSw;
 }

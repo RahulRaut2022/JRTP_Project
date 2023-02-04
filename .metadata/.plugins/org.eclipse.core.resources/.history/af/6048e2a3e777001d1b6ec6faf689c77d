@@ -1,5 +1,0 @@
-package com.project1.phonebook.service;
-
-public interface ContactService {
-
-}

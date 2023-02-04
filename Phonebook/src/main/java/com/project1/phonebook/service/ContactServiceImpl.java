@@ -17,6 +17,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public String saveContact(Contact contact) {
+		contact.setActiveSw("Y");
 		Contact savedContact = contactRepo.save(contact);
 		if (contact.getContactId() != null) {
 			return "contact saved";
@@ -27,7 +28,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public List<Contact> getAllContact() {
-		return contactRepo.findAll();
+		return contactRepo.findByActiveSw("Y");
 	}
 
 	@Override
@@ -53,11 +54,19 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public String deleteContactById(Integer contactId) {
 
-		if (contactRepo.existsById(contactId)) {
-			contactRepo.deleteById(contactId);
+		/*
+		 * if (contactRepo.existsById(contactId)) { contactRepo.deleteById(contactId);
+		 * return "record deleted"; } else { return "record not found"; }
+		 */
+
+		Optional<Contact> findById = contactRepo.findById(contactId);
+		if (findById.isPresent()) {
+			Contact contact = findById.get();
+			contact.setActiveSw("N");
+			contactRepo.save(contact);
 			return "record deleted";
 		} else {
-			return "record not found";
+			return "record not deleted";
 		}
 	}
 
