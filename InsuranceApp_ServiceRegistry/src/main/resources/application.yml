@@ -1,0 +1,6 @@
+server:
+  port: 7801
+  
+eureka:
+  client:
+    register-with-eureka: false

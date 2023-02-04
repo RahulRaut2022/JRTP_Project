@@ -1,5 +1,0 @@
-Scenario 1 : Plan name selected -> select * from Plan where planName=:name;
-Scenario 2 : Plan status selected -> select * from Plan where planStatus=:status;
-Scenario 3 : name & status selected -> select * from Plan where planName=:name 
-									   and planStatus=:status;
-Scenario 4: Criteria not selected -> select *from table;					   
